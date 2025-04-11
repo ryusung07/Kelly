@@ -10,9 +10,9 @@ plt.rcParams['axes.unicode_minus'] = False   # 마이너스 깨짐 방지
 st.title("📈 켈리 공식 자본 투입률 시뮬레이터")
 
 # ✅ 사용자 입력
-gain = st.number_input("📈 이익률 (%)", value=300.0)
-loss = st.number_input("📉 손실률 (%)", value=-100.0)
-p_input = st.slider("🎯 현재 승률 (%)", 0.0, 100.0, 40.0)
+gain = st.number_input("📈 Gain per win (%)", value=300.0)
+loss = st.number_input("📉 Loss per loss (%)", value=-100.0)
+p_input = st.slider("🎯 Win rate (%)", 0.0, 100.0, 40.0)
 
 # ✅ 켈리 공식 계산
 b = gain / 100
@@ -22,16 +22,15 @@ f = (b * p - (1 - p)) / b
 
 # ✅ 그래프 그리기
 fig, ax = plt.subplots()
-ax.plot(p * 100, f * 100, label="켈리 자본 투입률 (%)")
-ax.axvline(p_input, color='red', linestyle='--', label=f"현재 승률: {p_input:.2f}%")
+ax.plot(p * 100, f * 100, label="Kelly allocation (%)")
+ax.axvline(p_input, color='red', linestyle='--', label=f"Current win rate: {p_input:.2f}%")
 current_f = ((b * (p_input / 100) - (1 - (p_input / 100))) / b) * 100
-ax.axhline(current_f, color='gray', linestyle='--', label=f"투입률: {current_f:.2f}%")
-ax.set_xlabel("승률 (%)")
-ax.set_ylabel("자본 투입률 (%)")
-ax.set_title("📊 승률에 따른 켈리 공식 자본 투입률")
+ax.axhline(current_f, color='gray', linestyle='--', label=f"Recommended bet size: {current_f:.2f}%")
+ax.set_xlabel("Win rate (%)")
+ax.set_ylabel("Capital allocation (%)")
+ax.set_title("📊 Kelly Optimal Capital Allocation by Win Rate")
 ax.grid(True)
 ax.legend()
 
 # ✅ Streamlit에 그래프 출력
 st.pyplot(fig)
-
