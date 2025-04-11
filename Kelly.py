@@ -10,9 +10,9 @@ plt.rcParams['axes.unicode_minus'] = False   # 마이너스 깨짐 방지
 st.title("📈 켈리 공식 자본 투입률 시뮬레이터")
 
 # ✅ 사용자 입력
-gain = st.number_input("📈 Gain per win (%)", value=300.0)
+gain = st.number_input("📈 Gain per win (%)", value=200.0)
 loss = st.number_input("📉 Loss per loss (%)", value=-100.0)
-p_input = st.slider(" Win rate (%)", 0.0, 100.0, 40.0)
+p_input = st.slider(" Win rate (%)", 0.0, 100.0, 50.0)
 
 # ✅ 켈리 공식 계산
 b = gain / 100
