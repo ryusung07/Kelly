@@ -1,20 +1,20 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-import platform
+#import matplotlib.font_manager as fm
+#import platform
 
 # ✅ 한글 폰트 설정
-if platform.system() == 'Windows':
-    font_path = 'C:/Windows/Fonts/malgun.ttf'  # 윈도우용
-elif platform.system() == 'Darwin':
-    font_path = '/System/Library/Fonts/AppleSDGothicNeo.ttc'  # 맥OS용
-else:
-    font_path = '/usr/share/fonts/truetype/nanum/NanumGothic.ttf'  # 리눅스용 (Nanum Gothic 설치 필요)
+#if platform.system() == 'Windows':
+#    font_path = 'C:/Windows/Fonts/malgun.ttf'  # 윈도우용
+#elif platform.system() == 'Darwin':
+#    font_path = '/System/Library/Fonts/AppleSDGothicNeo.ttc'  # 맥OS용
+#else:
+#    font_path = '/usr/share/fonts/truetype/nanum/NanumGothic.ttf'  # 리눅스용 (Nanum Gothic 설치 필요)
 
-font_name = fm.FontProperties(fname=font_path).get_name()
-plt.rc('font', family=font_name)
-plt.rcParams['axes.unicode_minus'] = False  # 마이너스 깨짐 방지
+#font_name = fm.FontProperties(fname=font_path).get_name()
+#plt.rc('font', family=font_name)
+#plt.rcParams['axes.unicode_minus'] = False  # 마이너스 깨짐 방지
 
 # ✅ Streamlit 앱 본문
 st.title("📈 켈리 공식 자본 투입률 시뮬레이터")
