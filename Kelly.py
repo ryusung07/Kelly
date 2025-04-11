@@ -7,7 +7,7 @@ plt.rcParams['font.family'] = 'DejaVu Sans'  # 웹 호환성 좋고 한글도 �
 plt.rcParams['axes.unicode_minus'] = False   # 마이너스 깨짐 방지
 
 # ✅ Streamlit 앱 제목
-st.title("📈 켈리 공식 자본 투입률 시뮬레이터")
+st.title("📈 켈리 공식 자본 투입률 시뮬레이터터")
 
 # ✅ 사용자 입력
 gain = st.number_input("📈 Gain per win (%)", value=200.0)
